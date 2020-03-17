@@ -1,0 +1,9 @@
+.img {
+  width: 100vw;
+}
+
+.App {
+ display: flex;
+  flex-direction: row;
+  background-color: greenyellow;
+}

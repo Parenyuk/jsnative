@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+echo '.idea'
+
 # production
 /build
 
