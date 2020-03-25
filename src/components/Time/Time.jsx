@@ -4,6 +4,37 @@ import s from './Time.module.css'
 class Time extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {date: ''};
+    }
+
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => {
+                let date = new Date();
+                let str = `${date.getHours()}:${date.getMinutes()}`;
+                this.setState({date: str})
+            },
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    render() {
+        return (
+            <div className={s.Time}>
+                {this.state.date}
+            </div>
+        );
+    }
+}
+/*ВАРІАНТ 2 ГОДИННИК З СЕКУНДАМИ!!!
+class Time extends React.Component {
+    constructor(props) {
+        super(props);
         let time = new Date();
         this.state = {date: new Date()};
     }
@@ -27,6 +58,7 @@ class Time extends React.Component {
         );
     }
 }
+ */
 
 /*
 class Time extends React.Component {
